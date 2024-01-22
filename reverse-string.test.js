@@ -1,4 +1,4 @@
-const {reverseStr, sumDigits} = require('./reverse-string.js')
+const {reverseStr, sumDigits, getFibonacci} = require('./reverse-string.js')
 describe('Takes string and retruns it reveresed', () => {
     test('Takes string and returns string', () => {
       //arrange 
@@ -42,7 +42,7 @@ describe('Takes string and retruns it reveresed', () => {
 }) 
 
 describe('returns sum of digits in input number', () => {
-    xtest('Takes number and returns number', () => {
+    test('Takes number and returns number', () => {
       //arrange 
       const input =  1 
       //act 
@@ -62,7 +62,7 @@ describe('returns sum of digits in input number', () => {
         expect(output).toBe(2)
     })
 
-    test.only('Recursivley returns single when passed multi digits', () => {
+    test('Recursivley returns single when passed multi digits', () => {
         //arrange 
         const input =  66
         //act 
@@ -73,4 +73,45 @@ describe('returns sum of digits in input number', () => {
           expect(output).toBe(3) 
           
       }) 
+}) 
+describe('takes a number and returns the number at that point in the Fibonacci sequence', () => {
+    test('returns 0 when passed 0', () => {
+      //arrange 
+      const input = 0
+      //act 
+      const output = getFibonacci(input) 
+      //assert
+        expect(output).toBe(0) 
+        
+    }) 
+    test('if number is less than 2 should return correct fib number', () => {
+        //arrange 
+        const input = 1
+        //act 
+        const output = getFibonacci(input) 
+        //assert
+          expect(output).toBe(1) 
+          
+      }) 
+      test('if number is 1 digit should return correct fib number', () => {
+        //arrange 
+        const input = 3
+        //act 
+        const output = getFibonacci(input) 
+        console.log(output)
+        //assert
+          expect(output).toBe(2) 
+          
+      }) 
+      test('if number is 2 digits should return correct fib number', () => {
+        //arrange 
+        const input = 10
+        //act 
+        const output = getFibonacci(input) 
+        console.log(output)
+        //assert
+          expect(output).toBe(55) 
+          
+      }) 
+
 })
