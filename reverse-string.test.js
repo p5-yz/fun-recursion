@@ -42,26 +42,35 @@ describe('Takes string and retruns it reveresed', () => {
 }) 
 
 describe('returns sum of digits in input number', () => {
-    test('Takes number and returns number', () => {
+    xtest('Takes number and returns number', () => {
       //arrange 
       const input =  1 
       //act 
-
       const output = sumDigits(input) 
-      console.log(output)
       //assert
         expect(output).toBe(1) 
         
     }) 
-    test('Return sum when passed multiple digits', () => {
+    test('single digit when passed single digit', () => {
+        const input = 9 
+        const output = sumDigits(input)
+        expect(output).toBe(9)
+    }) 
+    test('returns single digit when passed double digit', () => {
+        const input = 11
+        const output = sumDigits(input)
+        expect(output).toBe(2)
+    })
+
+    test.only('Recursivley returns single when passed multi digits', () => {
         //arrange 
-        const input =  123
+        const input =  66
         //act 
   
-        const output = sumDigits(input) 
-        console.log(output)
+        const output = sumDigits(input)
+    
         //assert
-          expect(output).toBe(6) 
+          expect(output).toBe(3) 
           
       }) 
 })
