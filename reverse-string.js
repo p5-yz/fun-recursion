@@ -11,26 +11,6 @@ function reverseStr (str) {
     return str.slice(-1) + reverseStr(str.slice(0, -1))
 } 
 
-//function sumDigits (num) {
-    //console.log(num)
-// takes multiple digits and returns sum of digits
-//convert numbers to string  
-//let sum = 0 
-//const string = String(num)
-
-//for (let i=0; i < string.length; i++) {
-    //sum += Number(string[i])
-
-//} 
-//if sum of digits > 9 
-//let counter = 0
-//if(counter < String(num).length) return 0
-
-//const string = String(num)
-//console.log(sumDigits(string.slice(0,-1)))
-//return sumDigits(string.slice(0,-1))
-//return sum
-//} 
 
 function sumDigits(num) { 
     
@@ -39,7 +19,6 @@ function sumDigits(num) {
     array = String(num).split('')
 
     //const arr = String(num)
-    let n = num / 10
     if(num <= 9) { 
         return num ;
     } 
@@ -53,7 +32,16 @@ function sumDigits(num) {
     }
  }
 
+ function getFibonacci(fib) {
+    
+    //const array = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+    if(fib < 2) return fib 
+    else {
+        return getFibonacci(fib-1) + getFibonacci(fib-2)
+    }
+
+ }
 
 
 
-module.exports = {reverseStr, sumDigits}
+module.exports = {reverseStr, sumDigits, getFibonacci}
