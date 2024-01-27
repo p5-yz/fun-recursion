@@ -1,4 +1,4 @@
-const {reverseStr, sumDigits, getFibonacci} = require('./reverse-string.js')
+const {reverseStr, sumDigits, getFibonacci, deepTotal} = require('./reverse-string.js')
 describe('Takes string and retruns it reveresed', () => {
     test('Takes string and returns string', () => {
       //arrange 
@@ -114,4 +114,18 @@ describe('takes a number and returns the number at that point in the Fibonacci s
           
       }) 
 
+})
+describe('deepTotal: recursive function that totals an arbitrarily nested array of integers', ()=>{
+  test('Should return 0 if empty array. Eg, [] ==> 0',()=>{
+
+  })
+  test('Should return the total of a (non nested) array of two numbers. Eg, [1,2] ==> 3',()=>{
+
+  })
+  test('Should return the total of a nested array. Eg, [[1,2]] ==> 3',()=>{
+
+  })
+  test('Should return the total of non nested and nested array. Eg, [1,2,[3,4]] ==> 10', ()=>{
+
+  })
 })

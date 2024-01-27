@@ -33,15 +33,24 @@ function sumDigits(num) {
  }
 
  function getFibonacci(fib) {
-    
     //const array = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
     if(fib < 2) return fib 
     else {
         return getFibonacci(fib-1) + getFibonacci(fib-2)
     }
-
  }
 
-
-
-module.exports = {reverseStr, sumDigits, getFibonacci}
+ function deepTotal(arr){
+    function sum(arr, total){
+        for (let i=0; i<arr.length; i++){
+            if(!isNaN(arr[i])){
+                total += Number(arr[i])   
+            } else {
+            return sum(arr[i],total)
+            }
+        }
+        return total
+    }
+    return sum(arr,0)
+ }
+module.exports = {reverseStr, sumDigits, getFibonacci, deepTotal}
