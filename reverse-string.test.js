@@ -24,7 +24,7 @@ describe('Takes string and retruns it reveresed', () => {
       }) 
 
     test('Should return reversed of string with 2 characters', () => {
-        //arrange 
+        //arranges
         const input = 'be'
         //act 
         output = reverseStr(input)
