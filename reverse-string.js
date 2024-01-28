@@ -1,9 +1,15 @@
-
+const object = {
+    sumDigits,
+    reverseStr,
+    getFibonacci,
+    deepTotal,
+    deepIncludes,
+    countObjects
+}
 function reverseStr (str) {
     //takes string as input 
     //get get last character of string 
     //return last character    
-    console.log(str)
     if (str.length < 2)
     //console.log(reverseStr(str.slice(-1)))
         return str
@@ -13,8 +19,6 @@ function reverseStr (str) {
 
 
 function sumDigits(num) { 
-    
-
     let sum = 0
     array = String(num).split('')
 
@@ -40,17 +44,35 @@ function sumDigits(num) {
     }
  }
 
- function deepTotal(arr){
-    function sum(arr, total){
-        for (let i=0; i<arr.length; i++){
-            if(!isNaN(arr[i])){
-                total += Number(arr[i])   
+ function deepTotal(array){
+    function sum(array, total){
+        for (let i=0; i<array.length; i++){
+            if(Number(array[i])){
+                total += +(array[i])  
             } else {
-            return sum(arr[i],total)
+            total = sum(array[i],total)
             }
         }
         return total
     }
-    return sum(arr,0)
+    return sum(array,0)
  }
-module.exports = {reverseStr, sumDigits, getFibonacci, deepTotal}
+
+ function deepIncludes(array, value){
+    for (let i=0; i<array.length; i++){
+        if (!Array.isArray(array[i])){
+            if (array[i] === value){
+                return true
+            }
+        } else {
+            return this.deepIncludes(array[i], value)
+        }    
+    }
+    return false
+ }
+
+ function countObjects(){
+
+ }
+// module.exports = {reverseStr, sumDigits, getFibonacci, deepTotal, deepIncludes}
+module.exports = object
